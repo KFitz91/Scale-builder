@@ -1,0 +1,39 @@
+def build(x):
+    num_to_note = {1:"a",2:"a#",3:"b",4:"c",5:"c#",6:"d",7:"d#",8:"e",9:"f",10:"f#",11:"g",12:"g#"}
+    note_to_num = {"a":1,"a#":2,"b":3,"c":4,"c#":5,"d":6,"d#":7,"e":8,"f":9,"f#":10,"g":11,"g#":12}
+
+    root = note_to_num[x[0]]
+
+    if x[-1]=='m':
+        template = [root,root+2,root+3,root+5,root+7,root+8,root+10]
+        nums = []
+        for e in template:
+            if e>12:
+                nums.append(e-12)
+            else:
+                nums.append(e)
+
+        scale = []
+
+        for e in nums:
+            scale.append(num_to_note[e])
+    else:
+        template = [root,root+2,root+4,root+5,root+7,root+9,root+11]
+        nums = []
+        for e in template:
+            if e>12:
+                nums.append(e-12)
+            else:
+                nums.append(e)
+
+        scale = []
+
+        for e in nums:
+            scale.append(num_to_note[e])
+
+    print(scale)
+    
+x = input("Enter the root note: ")
+
+build(x)
+
