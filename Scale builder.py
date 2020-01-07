@@ -30,7 +30,11 @@ def check(x):
 
     def check3(x):
         if x[2]=='m':
-            check2(x)
+            if x[1]=='m':
+                print("Invalid input, try again")
+                user_in()
+            else:
+                check2(x)
         else:
             print("Invalid input, try again")
             user_in()
